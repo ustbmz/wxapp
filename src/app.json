@@ -1,41 +1,9 @@
 {
-  "pages": [
-    {
-      "path": "pages/index",
-      "config": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": true,
-        "backgroundTextStyle": "dark",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "pages/msg",
-    "pages/hot",
-    "pages/center",
-    {
-      "path": "packageB/newPost",
-      "subPackage": true
-    },
-    {
-      "path": "pages/auth",
-      "config": {
-        "navigationBarTitleText": "授权页面"
-      }
-    },
-    {
-      "path": "packageA/detail",
-      "config": {
-        "navigationBarTitleText": "文章详情",
-        "usingComponents": {
-          "parser": "/static/wxParse/index"
-        }
-      },
-      "subPackage": true
-    }
-  ],
+  "pages": ["pages/index/main"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -47,50 +15,59 @@
     "list": [
       {
         "text": "首页",
-        "pagePath": "pages/index",
+        "pagePath": "pages/index/main",
         "iconPath": "static/images/tab_home_no.png",
         "selectedIconPath": "static/images/tab_home_yes.png"
       },
       {
         "text": "消息",
-        "pagePath": "pages/msg",
+        "pagePath": "pages/index/main",
         "iconPath": "static/images/tab_news_no.png",
         "selectedIconPath": "static/images/tab_news_yes.png"
       },
       {
         "text": "热门",
-        "pagePath": "pages/hot",
+        "pagePath": "pages/index/main",
         "iconPath": "static/images/tab_popular_no.png",
         "selectedIconPath": "static/images/tab_popular_yes.png"
       },
       {
         "text": "我的",
-        "pagePath": "pages/center",
+        "pagePath": "pages/index/main",
         "iconPath": "static/images/tab_my_no.png",
         "selectedIconPath": "static/images/tab_my_yes.png"
       }
     ],
-    "position": "bottom",
-    "custom": true
+
+    "items": [
+      {
+        "name": "首页",
+        "pagePath": "pages/index/main",
+        "icon": "static/images/tab_home_no.png",
+        "activeIcon": "static/images/tab_home_yes.png"
+      },
+      {
+        "name": "消息",
+        "pagePath": "pages/index/main",
+        "icon": "static/images/tab_news_no.png",
+        "activeIcon": "static/images/tab_news_yes.png"
+      },
+      {
+        "name": "热门",
+        "pagePath": "pages/index/main",
+        "icon": "static/images/tab_popular_no.png",
+        "activeIcon": "static/images/tab_popular_yes.png"
+      },
+      {
+        "name": "我的",
+        "pagePath": "pages/index/main",
+        "icon": "static/images/tab_my_no.png",
+        "activeIcon": "static/images/tab_my_yes.png"
+      }
+    ],
+    "position": "bottom"
   },
   "usingComponents": {
-    "van-button": "/static/@vant/weapp/button/index",
-    "van-tabbar": "/static/@vant/weapp/tabbar/index",
-    "van-tabbar-item": "/static/@vant/weapp/tabbar-item/index",
-    "van-icon": "/static/@vant/weapp/icon/index",
-    "van-tab": "/static/@vant/weapp/tab/index",
-    "van-tabs": "/static/@vant/weapp/tabs/index",
-    "van-search": "/static/@vant/weapp/search/index",
-    "van-dialog": "/static/@vant/weapp/dialog/index",
-    "van-uploader": "/static/@vant/weapp/uploader/index",
-    "van-picker": "/static/@vant/weapp/picker/index",
-    "van-field": "/static/@vant/weapp/field/index"
-  },
-  "sitemapLocation": "sitemap.json",
-  "preloadRule": {
-    "pages/index": {
-      "network": "all",
-      "packages": ["packageA"]
-    }
+    "van-button": "@vant/weapp/button/index"
   }
 }
