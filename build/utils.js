@@ -7,9 +7,10 @@ var packageInfo = require('../package.json')
 var mkdirp = require('mkdirp')
 
 exports.assetsPath = function (_path) {
-  var assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+  var assetsSubDirectory =
+    process.env.NODE_ENV === 'production'
+      ? config.build.assetsSubDirectory
+      : config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
 }
 
@@ -35,7 +36,7 @@ exports.cssLoaders = function (options) {
     loader: 'px2rpx-loader',
     options: {
       baseDpr: 1,
-      rpxUnit: 0.5
+      rpxUnit: 1
     }
   }
 
@@ -101,10 +102,10 @@ const writeFile = async (filePath, content) => {
 
 exports.writeFrameworkinfo = function () {
   var buildInfo = {
-    'toolName': mpvueInfo.name,
-    'toolFrameWorkVersion': mpvueInfo.version,
-    'toolCliVersion': packageInfo.mpvueTemplateProjectVersion || '',
-    'createTime': Date.now()
+    toolName: mpvueInfo.name,
+    toolFrameWorkVersion: mpvueInfo.version,
+    toolCliVersion: packageInfo.mpvueTemplateProjectVersion || '',
+    createTime: Date.now()
   }
 
   var content = JSON.stringify(buildInfo)

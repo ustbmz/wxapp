@@ -9,43 +9,44 @@ var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var relative = require('relative')
+const MpvueEntry = require('mpvue-entry')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 function getEntry (rootSrc) {
-  var map = {};
-  glob.sync(rootSrc + '/pages/**/main.js')
-    .forEach(file => {
-      var key = relative(rootSrc, file).replace('.js', '');
-      map[key] = file;
-    })
-  return map;
+  var map = {}
+  glob.sync(rootSrc + '/pages/**/main.js').forEach((file) => {
+    var key = relative(rootSrc, file).replace('.js', '')
+    map[key] = file
+  })
+  return map
 }
 
-const appEntry = { app: resolve('./src/main.js') }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
-const entry = Object.assign({}, appEntry, pagesEntry)
+// const appEntry = { app: resolve('./src/main.js') }
+// const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+// const entry = Object.assign({}, appEntry, pagesEntry)
 
 let baseWebpackConfig = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
   // 可以将 entry 写成 {'toPath': 'fromPath'} 的形式，
   // toPath 为相对于 dist 的路径, 例：index/demo，则生成的文件地址为 dist/index/demo.js
-  entry,
+  entry: MpvueEntry.getEntry('src/app.json'),
   target: require('mpvue-webpack-target'),
   output: {
     path: config.build.assetsRoot,
     jsonpFunction: 'webpackJsonpMpvue',
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath:
+      process.env.NODE_ENV === 'production'
+        ? config.build.assetsPublicPath
+        : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue': 'mpvue',
+      vue: 'mpvue',
       '@': resolve('src')
     },
     symlinks: false,
@@ -76,7 +77,7 @@ let baseWebpackConfig = {
           {
             loader: 'mpvue-loader',
             options: Object.assign({ checkMPEntry: true }, vueLoaderConfig)
-          },
+          }
         ]
       },
       {
@@ -102,22 +103,28 @@ let baseWebpackConfig = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[ext]')
         }
-      },
+      }
     ]
   },
   plugins: [
+    new MpvueEntry(),
     // api 统一桥协议方案
     new webpack.DefinePlugin({
-      'mpvue': 'global.mpvue',
-      'mpvuePlatform': 'global.mpvuePlatform'
+      mpvue: 'global.mpvue',
+      mpvuePlatform: 'global.mpvuePlatform'
     }),
     new MpvuePlugin(),
-    new CopyWebpackPlugin([{
-      from: '**/*.json',
-      to: ''
-    }], {
-      context: 'src/'
-    }),
+    // new CopyWebpackPlugin(
+    //   [
+    //     {
+    //       from: '**/*.json',
+    //       to: ''
+    //     }
+    //   ],
+    //   {
+    //     context: 'src/'
+    //   }
+    // ),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
@@ -140,10 +147,12 @@ const PLATFORM = process.env.PLATFORM
 if (/^(swan)|(tt)$/.test(PLATFORM)) {
   baseWebpackConfig = merge(baseWebpackConfig, {
     plugins: [
-      new CopyWebpackPlugin([{
-        from: path.resolve(__dirname, projectConfigMap[PLATFORM]),
-        to: path.resolve(config.build.assetsRoot)
-      }])
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, projectConfigMap[PLATFORM]),
+          to: path.resolve(config.build.assetsRoot)
+        }
+      ])
     ]
   })
 }
