@@ -1,8 +1,6 @@
-# wxapp
+# toimc-wxapp
 
-## 对应大前端论坛项目的小程序源码
-
-> community wxapp
+> toimc community wxapp
 
 ## Build Setup
 
