@@ -1,17 +1,26 @@
 // pages/mine/mine.js
+import { mvlist } from '../../mock/data.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inTheaters : [],
+    commingSoon:[],
+    top250:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.inTheaters = mvlist.subjects.slice(0,3)
+    this.setData({
+      inTheaters:mvlist.subjects.slice(10,13),
+      commingSoon:mvlist.subjects.slice(1,4),
+      top250:mvlist.subjects.slice(5,8),
+    })
 
   },
 

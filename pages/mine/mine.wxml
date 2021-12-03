@@ -1,2 +1,11 @@
 <!--pages/mine/mine.wxml-->
-<l-search-bar bg-color="#fff" show-cancel="{{false}}" placeholder="搜索"/>
+<view class="container">
+  <!-- <l-search-bar placeholder="搜索"
+                bg-color="#f6f6f6"
+                show-cancel="{{false}}"
+                l-class="search-top"
+                shape="circle"/> -->
+    <movie-list f-class="movie-mg" movies="{{inTheaters}}" title="正在热映" />
+    <movie-list f-class="movie-mg" movies="{{commingSoon}}" title="即将上映"/>
+    <movie-list f-class="movie-mg" movies="{{top250}}" title="豆瓣Top250"/>
+</view>

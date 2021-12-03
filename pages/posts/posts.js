@@ -19,7 +19,6 @@ Page({
 
   async getList(option){
     if(option==='index')option=''
-    let self = this
     await wx.request({
       url: "https://api.ustbmz.com/public/list",
       method: "POST",
@@ -29,9 +28,9 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success(res) {
+      success:(res)=> {
         const data = res.data.data
-        self.setData({
+        this.setData({
           lists: data
         })
       }
@@ -41,7 +40,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let self = this
     wx.request({
       url: "https://api.ustbmz.com/public/list",
       method: "POST",
@@ -52,7 +50,7 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success(res) {
+      success:(res)=> {
         let imgArr = []
         const data = res.data.data
         data.forEach((item) => {
@@ -67,7 +65,7 @@ Page({
             })
           }
         })
-        self.setData({
+        this.setData({
           lists: data,
           imgArr:imgArr
         })

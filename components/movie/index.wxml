@@ -1,0 +1,9 @@
+<!--components/movie/index.wxml-->
+<view class='container'>
+  <image class='movie-img' src='/images/01.png'></image>
+  <text class='title'> {{movie.title}} </text>
+  <view class='rate-row'>
+     <l-rate score="{{movie.rating.stars/10}}" disabled="{{true}}" size="22"/>
+     <text class="rate-text" wx:if="{{movie.rating.average !== 0}}">{{movie.rating.average}}</text>
+  </view>
+</view>

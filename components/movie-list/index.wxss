@@ -1,0 +1,38 @@
+/* components/movie-list/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.row{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:space-between;
+  padding: 10rpx 10rpx 0 18rpx;
+}
+
+.row .more-txt{
+  color: blue;
+}
+
+.row .title{
+  font-size: 30rpx;
+}
+
+.movie-list{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  padding: 20rpx 30rpx;
+}
+
+.rate-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+

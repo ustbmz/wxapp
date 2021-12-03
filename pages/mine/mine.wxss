@@ -1,1 +1,13 @@
 /* pages/mine/mine.wxss */
+.container{
+  background-color: #f2f2f2;
+}
+.movie-mg{
+  margin-top: 30rpx;
+}
+
+.search-top{
+  padding: 0 !important;
+}
+
+
