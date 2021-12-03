@@ -1,0 +1,25 @@
+<!--components/post/index.wxml-->
+<view class="list-box" bind:tap="goDetail" data-id="{{item._id}}">
+  <view class="list-head">
+    <view class="title">
+      <text class="type {{'type' +'-'+ item.catalog}}">{{item.catalog}}</text>
+      <text class="ellipsis">{{item.title}}</text>
+    </view>
+  </view>
+  <view class="author">
+    <view class="inline-block">
+      <image class="head" src="{{item.uid.pic}}" />
+      <text class="name">{{item.uid.name || '未知用户'}}</text>
+      <i class="vip" wx:if="{{item.uid.isVip !== '0'}}"> VIP {{item.uid.isVip}} </i>
+    </view>
+  </view>
+  <view class="list-body">
+    <view class="info">{{item.content}}</view>
+  </view>
+  <view class="list-footer">
+    <view class="left">
+      <text class="reply-num">{{item.answer}} 回复</text>
+      <text class="timer">{{item.created}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/posts/posts",
+    "pages/post-detail/post-detail",
+    "pages/mine/mine"
+  ],
+  "entryPagePath": "pages/index/index",
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "前端全栈",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "#999",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/posts/posts",
+        "iconPath": "images/tabbar/read.png",
+        "text": "POST",
+        "selectedIconPath": "/images/tabbar/readSel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tabbar/mine.png",
+        "text": "MINE",
+        "selectedIconPath": "images/tabbar/mineSel.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

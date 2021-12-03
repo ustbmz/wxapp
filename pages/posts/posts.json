@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "l-card":"/miniprogram_npm/lin-ui/card/index",
+    "l-message":"/miniprogram_npm/lin-ui/message/index",
+    "l-segment":"/miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item":"/miniprogram_npm/lin-ui/segment-item/index",
+    "post":"/components/post/index"
+  },
+  "navigationBarBackgroundColor": "#f8ca4c",
+  "navigationBarTitleText": "文章"
+}

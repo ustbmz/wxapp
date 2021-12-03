@@ -1,0 +1,25 @@
+<!-- pages/posts/posts.wxml -->
+<view>
+  <!-- <swiper indicator-dots autoplay interval="5000">
+    <swiper-item>
+      <image src="/images/02.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/03.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/03.png"></image>
+    </swiper-item>
+  </swiper> -->
+  <l-segment bind:linchange="changeTabs">
+    <l-segment-item tab="首页" key="index" />
+    <l-segment-item tab="提问" key="ask" />
+    <l-segment-item tab="建议" key="divse" />
+    <l-segment-item tab="分享" key="share" />
+    <l-segment-item tab="讨论" key="discuss" />
+  </l-segment>
+  <block wx:for="{{lists}}" wx:key="_id" wx:for-index="idx" wx:for-item="item">
+    <post item="{{item}}" />
+  </block>
+  <l-message content="{{content}}" />
+</view>

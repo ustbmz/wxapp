@@ -1,0 +1,2 @@
+<!--pages/mine/mine.wxml-->
+<l-search-bar bg-color="#fff" show-cancel="{{false}}" placeholder="搜索"/>

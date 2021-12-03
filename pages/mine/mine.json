@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index"
+  },
+  "navigationBarBackgroundColor": "#ffe7cb",
+  "navigationBarTitleText": "Music"
+}

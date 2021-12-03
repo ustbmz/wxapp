@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index"
+  },
+  "navigationBarBackgroundColor": "#f3f2f2",
+  "navigationBarTitleText": "钱端全栈",
+  "backgroundTextStyle": "light"
+}

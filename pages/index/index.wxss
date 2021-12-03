@@ -1,0 +1,51 @@
+/* pages/index/index.wxss */
+
+.container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: #f3f2f2;
+}
+
+l-avator{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.journey-container{
+  width: 200rpx;
+  height: 80rpx;
+  border: 2px solid #405f80;
+  border-radius: 6px;
+  padding: 2px 10px;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+
+.cardbox{
+  margin-top: 320rpx;
+  min-height: 600rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8a00;
+  border-radius: 30rpx 30rpx 0 0;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.cardbox .item{
+  margin: 30rpx;
+  font-size: 34rpx;
+  width: 400rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #0f4c81;
+  border-radius: 30rpx;
+  text-align: center;
+}
+
+.container text{
+  color:#fff
+}

@@ -1,0 +1,66 @@
+<view class="wrapper">
+  <view class="top-img">
+    <image src="{{imgSrc}}"></image>
+    <icon bind:tap="{{ playAudio ? 'onStopMusic' : 'onPlayMusic' }}" class="iconfont music-icon {{playAudio ?'icon-stop':'icon-start'}}"></icon>
+  </view>
+  <view class="detail-head">{{page.title}}</view>
+  <view class="detail-info-head">
+    <view class="avatar">
+      <image src="{{page.user ? page.user.pic : ''}}" />
+    </view>
+    <view class="cont">
+      <view class="name">{{ page.user ? page.user.name : '' }}</view>
+      <view class="time">{{ page.created }}</view>
+    </view>
+  </view>
+  <view class="tool">
+    <view class="circle">
+      <icon style="color:{{ isCollect ? 'brown' : 'gray'}}" class="iconfont icon-star" bind:tap="onPostCollect"></icon>
+      <icon style="margin-left: 15rpx;color:#4169E1" class="iconfont icon-fx"></icon>
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <view class="detail-info">
+    <view class="detail-info-body">
+      <rich-text nodes="{{page.content}}"></rich-text>
+    </view>
+  </view>
+  <l-toast show="{{tipFlag}}" title="{{tipStr}}" />
+  <!-- <view class="comments">
+        <view class="title">评论</view>
+        <ul
+          class="comments-list"
+          v-infinite-scroll="loadMore"
+          infinite-scroll-disabled="loading"
+          infinite-scroll-distance="10"
+        >
+          <li
+            class="item"
+            v-for="(item, index) in comments"
+            :key="'comment' + index"
+          >
+            <view class="user">
+              <view class="detail-info-head">
+                <view class="avatar">
+                  <img
+                    :src="item.cuid ? item.cuid.pic : ''"
+                  />
+                </view>
+                <view class="cont">
+                  <view class="name">{{ item.cuid ? item.cuid.name : '' }}</view>
+                  <view class="tiem">{{ item.created | moment }}.评论了帖子</view>
+                </view>
+                <view class="hands">
+                  <svg-icon icon="zan"></svg-icon>
+                  <span>{{ item.hands }}</span>
+                </view>
+              </view>
+              <view class="detail-body" v-richtext="item.content"></view>
+            </view>
+          </li>
+        </ul>
+        <view class="info" v-if="comments.length === 0">
+          暂无评论，快来抢沙发👉
+        </view>
+      </view> -->
+</view>

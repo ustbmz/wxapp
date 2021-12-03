@@ -1,0 +1,37 @@
+{
+  "id": "2978092",
+  "name": "wxapp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1973168",
+      "name": "分享",
+      "font_class": "share__easyic",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5515305",
+      "name": "收藏蓝",
+      "font_class": "shoucanglan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5540725",
+      "name": "我的收藏用",
+      "font_class": "wodeshoucangyong",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "14626440",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    }
+  ]
+}
