@@ -8,7 +8,9 @@ Page({
   data: {
     inTheaters: [],
     commingSoon: [],
-    top250: []
+    top250: [],
+    searchResult:false,
+    searchArray:[]
   },
 
   onGoMore(event) {
@@ -16,6 +18,17 @@ Page({
     console.log(type)
     wx.navigateTo({
       url: '/pages/more-movie/more-movie?type=' + type,
+    })
+  },
+  onConfirm(event){
+    this.setData({
+      searchResult:true,
+      searchArray:this.data.commingSoon
+    })
+  },
+  onCancel(){
+    this.setData({
+      searchResult:false
     })
   },
 

@@ -12,4 +12,18 @@
   margin-bottom: 10rpx;
 }
 
+.search-view{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 30rpx;
+}
 
+.search-view:after{
+  content: "";
+  width: 200rpx;
+}
+
+.search-movie{
+  margin-top: 40rpx;
+}
