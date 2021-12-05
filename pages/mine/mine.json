@@ -4,5 +4,5 @@
     "movie-list":"/components/movie-list/index"
   },
   "navigationBarBackgroundColor": "#e04a1e",
-  "navigationBarTitleText": "Music"
+  "navigationBarTitleText": "Movie"
 }

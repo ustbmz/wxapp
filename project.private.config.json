@@ -29,6 +29,12 @@
           "pathName": "pages/mine/mine",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/more-movie/more-movie",
+          "pathName": "pages/more-movie/more-movie",
+          "query": "",
+          "scene": null
         }
       ]
     }

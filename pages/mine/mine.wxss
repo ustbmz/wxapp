@@ -3,11 +3,13 @@
   background-color: #f2f2f2;
 }
 .movie-mg{
-  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 
 .search-top{
   padding: 0 !important;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
 }
 
 

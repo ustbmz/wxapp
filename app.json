@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/posts/posts",
     "pages/post-detail/post-detail",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/more-movie/more-movie"
   ],
   "entryPagePath": "pages/index/index",
   "window": {
