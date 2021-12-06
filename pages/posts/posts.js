@@ -9,13 +9,7 @@ Page({
   async changeTabs(arg){
     this.getList(arg.detail.activeKey)
   },
-  goDetail(event){
-    console.log( event.currentTarget.dataset.id)
-    const pid = event.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/post-detail/post-detail?pid='+ pid,
-    })
-  },
+  
 
   async getList(option){
     if(option==='index')option=''
