@@ -1,0 +1,55 @@
+<view class="container">
+  <image mode="aspectFill" class="head-img" src="{{movie.images.large}}"></image>
+  <view class="head-img-hover">
+    <view class="main-title">{{movie.title}}</view>
+    <view class="sub-title">{{movie.countries[0]+'.'+movie.year}}</view>
+    <view class="like">
+      <view class="plain-title">{{movie.wish_count}}</view>
+      <view class="plain-str">人喜欢</view>
+      <view class="plain-title">{{movie.reviews_count}} </view>
+      <view class="plain-str">人评论</view>
+    </view>
+  </view>
+  <image bindtap="onViewPost" class="movie-img" src="{{movie.images.large}}"></image>
+  <view class="summary">
+    <view class="original-title">
+      <text>{{movie.title}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <view class="scroll-container">
+        <l-rate score="{{movie.rating.stars/10}}" disabled="{{true}}" size="22" />
+        <text class="rating">{{movie.rating.average}}</text>
+      </view>
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      {{directors}}
+    </view>
+    <view class="flex-row">
+      <text class="mark">影人</text>
+      {{casts}}
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      {{movie.genres}}
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">剧情简介</text>
+    <text class="summary-content">{{movie.summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <view class="casts">
+    <text class="casts-font">影人</text>
+    <scroll-view enable-flex scroll-x class="avatars">
+      <block wx:for="{{avatars}}">
+        <view class="avatar">
+          <image class="avatar-img" src="{{item.img}}"></image>
+          <text class="avatar-name">{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -4,6 +4,6 @@
     "l-button": "/miniprogram_npm/lin-ui/button/index"
   },
   "navigationBarBackgroundColor": "#f3f2f2",
-  "navigationBarTitleText": "钱端全栈",
+  "navigationBarTitleText": "钱端全栈示例小程序",
   "backgroundTextStyle": "light"
 }

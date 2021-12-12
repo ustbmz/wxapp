@@ -2,9 +2,9 @@
 <view class="container">
   <l-search-bar placeholder="盗梦空间" bg-color="#f6f6f6" l-class="search-top" bind:linconfirm="onConfirm" bind:lincancel="onCancel" shape="circle" />
   <view wx:if="{{!searchResult}}">
-    <movie-list data-type="in_th" bind:tap="onGoMore" f-class="movie-mg" movies="{{inTheaters}}" title="正在热映" />
-    <movie-list data-type="comming_soon" bind:tap="onGoMore" f-class="movie-mg" movies="{{commingSoon}}" title="即将上映" />
-    <movie-list data-type="top250" bind:tap="onGoMore" f-class="movie-mg" movies="{{top250}}" title="豆瓣Top250" />
+    <movie-list data-type="in_th" bindtap="onGoMore" f-class="movie-mg" movies="{{inTheaters}}" title="正在热映" />
+    <movie-list data-type="comming_soon" bindtap="onGoMore" f-class="movie-mg" movies="{{commingSoon}}" title="即将上映" />
+    <movie-list data-type="top250" bindtap="onGoMore" f-class="movie-mg" movies="{{top250}}" title="豆瓣Top250" />
   </view>
   <view wx:else>
     <view class="search-view">

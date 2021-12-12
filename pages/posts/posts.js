@@ -6,13 +6,21 @@ Page({
   data: {
     lists: []
   },
-  async changeTabs(arg){
+  async changeTabs(arg) {
     this.getList(arg.detail.activeKey)
   },
-  
 
-  async getList(option){
-    if(option==='index')option=''
+  goPostDetail(event) {
+    console.log(event)
+    const pid = event.detail.pid
+    wx.navigateTo({
+      url: '/pages/post-detail/post-detail?pid=' + pid,
+    })
+  },
+
+
+  async getList(option) {
+    if (option === 'index') option = ''
     await wx.request({
       url: "https://api.ustbmz.com/public/list",
       method: "POST",
@@ -22,7 +30,7 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success:(res)=> {
+      success: (res) => {
         const data = res.data.data
         this.setData({
           lists: data
@@ -44,7 +52,7 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success:(res)=> {
+      success: (res) => {
         let imgArr = []
         const data = res.data.data
         data.forEach((item) => {
@@ -52,8 +60,8 @@ Page({
           if (img.test(item.content)) {
             let group = item.content.match(img)
             group.map((item) => {
-              let str = item.replace('img[','')
-              str = str.replace(']','')
+              let str = item.replace('img[', '')
+              str = str.replace(']', '')
               console.log(str)
               imgArr.push(str)
             })
@@ -61,7 +69,7 @@ Page({
         })
         this.setData({
           lists: data,
-          imgArr:imgArr
+          imgArr: imgArr
         })
       }
     })

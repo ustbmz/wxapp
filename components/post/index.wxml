@@ -1,5 +1,5 @@
 <!--components/post/index.wxml-->
-<view class="list-box" bind:tap="goDetail" data-id="{{item._id}}">
+<view class="list-box" data-id="{{item._id}}" bind:tap="goPost" >
   <view class="list-head">
     <view class="title">
       <text class="type {{'type' +'-'+ item.catalog}}">{{item.catalog}}</text>
@@ -13,7 +13,7 @@
       <i class="vip" wx:if="{{item.uid.isVip !== '0'}}"> VIP {{item.uid.isVip}} </i>
     </view>
   </view>
-  <view class="list-body">
+  <view class="list-body" >
     <view class="info">{{item.content}}</view>
   </view>
   <view class="list-footer">

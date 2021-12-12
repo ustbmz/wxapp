@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    color: #777777;
+}
+
+.head-img {
+    width: 100%;
+    height: 320rpx;
+    -webkit-filter: blur(10px);
+}
+
+.head-img-hover {
+    position: absolute;
+}
+
+.main-title {
+    font-size: 40rpx;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+    color: #fff;
+    margin: 50rpx 0 0 40rpx;
+}
+
+.sub-title {
+    font-size: 28rpx;
+    letter-spacing: 2rpx;
+    color: #fff;
+    margin: 40rpx 0 0 40rpx;
+}
+
+.like {
+    display: flex;
+    flex-direction: row;
+    font-size: 28rpx;
+    letter-spacing: 2rpx;
+    color: #fff;
+    margin: 60rpx 0 0 20rpx;
+}
+
+.plain-title {
+    margin-left: 20rpx;
+    color: #f21146;
+}
+
+.plain-str {
+    margin-left: 10rpx;
+    color: #333;
+}
+
+.movie-img {
+    width: 175rpx;
+    height: 238rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 160rpx
+}
+
+.summary {
+    margin-left: 30rpx;
+    color: #777777;
+    margin-top: 30rpx;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.original-title {
+    color: #000;
+    font-size: 26rpx;
+    font-weight: bold;
+    margin-bottom: 40rpx;
+}
+
+.mark {
+    margin-right: 30rpx;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.rating {
+    font-size: 26rpx;
+    margin-left: 10rpx;
+}
+
+.hr {
+    width: 100%;
+    height: 1rpx;
+    background-color: #d9d9d9;
+    margin-top: 40rpx;
+}
+
+.synopsis {
+    display: flex;
+    flex-direction: column;
+    margin: 50rpx 40rpx 0 40rpx;
+}
+
+.synopsis-font {
+    color: #000;
+}
+
+.summary-content {
+    margin-top: 20rpx;
+    line-height: 40rpx;
+    letter-spacing: 1rpx;
+}
+
+.casts {
+    display: flex;
+    flex-direction: column;
+    margin: 50rpx 40rpx 0 40rpx;
+}
+
+
+.avatars {
+    display: flex;
+    flex-direction: row;
+    height: 300rpx;
+}
+
+.casts-font{
+    margin-bottom: 40rpx;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40rpx;
+}
+
+.avatar-img {
+    width: 170rpx;
+    height: 210rpx;
+    margin-bottom: 12rpx;
+}
+
+.avatar-name {
+    font-size: 24rpx;
+}

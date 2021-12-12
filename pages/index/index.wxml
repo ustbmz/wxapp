@@ -2,7 +2,7 @@
 <view class="container">
   <l-avatar size="200" placement="right" shape="square" open-data="{{['userAvatarUrl']}}" />
   <view class="cardbox">
-    <view class="item" bind:tap="onTap">
+    <view class="item" bindtap="onTap">
       <text>大前端论坛示例小程序</text>
     </view>
     <view class="item">

@@ -19,7 +19,7 @@
     <l-segment-item tab="讨论" key="discuss" />
   </l-segment>
   <block wx:for="{{lists}}" wx:key="_id" wx:for-index="idx" wx:for-item="item">
-    <post item="{{item}}" />
+    <post bind:post-tap="goPostDetail" item="{{item}}" />
   </block>
   <l-message content="{{content}}" />
 </view>
