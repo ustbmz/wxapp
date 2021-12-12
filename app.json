@@ -30,7 +30,7 @@
             {
                 "pagePath": "pages/mine/mine",
                 "iconPath": "images/tabbar/mine.png",
-                "text": "MINE",
+                "text": "Movie",
                 "selectedIconPath": "images/tabbar/mineSel.png"
             }
         ]
