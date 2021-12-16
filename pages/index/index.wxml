@@ -3,7 +3,7 @@
   <l-avatar size="200" placement="right" shape="square" open-data="{{['userAvatarUrl']}}" />
   <view class="cardbox">
     <view class="item" bindtap="onTap">
-      <text>前端全栈论坛小程序</text>
+      <text>全栈论坛小程序</text>
     </view>
     <view class="item" bindtap="onTap">
       <text>文档库</text>
