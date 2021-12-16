@@ -3,10 +3,13 @@
   <l-avatar size="200" placement="right" shape="square" open-data="{{['userAvatarUrl']}}" />
   <view class="cardbox">
     <view class="item" bindtap="onTap">
-      <text>大前端论坛示例小程序</text>
+      <text>前端全栈论坛小程序</text>
+    </view>
+    <view class="item" bindtap="onTap">
+      <text>文档库</text>
     </view>
     <view class="item">
-      <text>音乐播放器示例小程序</text>
+      <text>音乐播放器(云开发)</text>
     </view>
   </view>
 </view>

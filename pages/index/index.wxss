@@ -36,8 +36,8 @@ page{
   margin: 30rpx;
   font-size: 34rpx;
   width: 400rpx;
-  height: 140rpx;
-  line-height: 140rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background: #0f4c81;
   border-radius: 20rpx;
