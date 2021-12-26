@@ -47,7 +47,7 @@
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.19.4",
+    "libVersion": "2.21.1",
     "appid": "wx06523008fe290f11",
     "projectname": "wxapp",
     "debugOptions": {

@@ -4,6 +4,6 @@
     "movie-list":"/components/movie-list/index",
     "movie":"/components/movie/index"
   },
-  "navigationBarBackgroundColor": "#e04a1e",
+  "navigationBarBackgroundColor": "#FF7F3F",
   "navigationBarTitleText": "Movie"
 }

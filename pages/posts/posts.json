@@ -6,6 +6,6 @@
     "l-segment-item":"/miniprogram_npm/lin-ui/segment-item/index",
     "post":"/components/post/index"
   },
-  "navigationBarBackgroundColor": "#f8ca4c",
+  "navigationBarBackgroundColor": "#F6D860",
   "navigationBarTitleText": "大前端BBS"
 }

@@ -15,7 +15,10 @@
 }
 
 .row .more-txt{
-  color: blue;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: rgb(38, 38, 128);
+  margin-right: 15rpx;
 }
 
 .row .title{

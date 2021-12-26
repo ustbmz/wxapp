@@ -24,13 +24,25 @@
             {
                 "pagePath": "pages/posts/posts",
                 "iconPath": "images/tabbar/read.png",
-                "text": "POST",
+                "text": "bbs",
                 "selectedIconPath": "/images/tabbar/readSel.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/tabbar/music.png",
+                "text": "music",
+                "selectedIconPath": "/images/tabbar/musicSel.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "iconPath": "images/tabbar/movie.png",
+                "text": "movie",
+                "selectedIconPath": "images/tabbar/movieSel.png"
             },
             {
                 "pagePath": "pages/mine/mine",
                 "iconPath": "images/tabbar/mine.png",
-                "text": "Movie",
+                "text": "mine",
                 "selectedIconPath": "images/tabbar/mineSel.png"
             }
         ]

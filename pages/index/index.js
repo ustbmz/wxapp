@@ -15,6 +15,12 @@ Page({
     // 跳转页面
   },
 
+  goMusic:()=>{
+    wx.switchTab({
+      url: '/pages/music/music',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

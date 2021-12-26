@@ -2,6 +2,6 @@
   "usingComponents": {
     "l-toast":"/miniprogram_npm/lin-ui/toast/index"
   },
-  "navigationBarBackgroundColor": "#fff",
+  "navigationBarBackgroundColor": "#F6D860",
   "navigationBarTitleText": "详情"
 }

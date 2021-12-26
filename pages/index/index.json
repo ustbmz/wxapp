@@ -3,7 +3,7 @@
     "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
     "l-button": "/miniprogram_npm/lin-ui/button/index"
   },
-  "navigationBarBackgroundColor": "#f3f2f2",
-  "navigationBarTitleText": "大钱端全栈小程序入口",
+  "navigationBarBackgroundColor": "#EA5C2B",
+  "navigationBarTitleText": "音乐",
   "backgroundTextStyle": "light"
 }
