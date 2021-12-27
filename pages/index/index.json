@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
-    "l-button": "/miniprogram_npm/lin-ui/button/index"
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "playlist": "/components/playlist/index"
+
   },
   "navigationBarBackgroundColor": "#EA5C2B",
   "navigationBarTitleText": "音乐",

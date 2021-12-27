@@ -1,0 +1,32 @@
+.playlist-container {
+    width: 220rpx;
+    height: 320rpx;
+    margin: 12rpx;
+    position: relative;
+}
+
+.img {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 6rpx;
+}
+
+.play-count{
+    font-size: 22rpx;
+    position: absolute;
+    top: 2rpx;
+    right: 10rpx;
+    color: #fff;
+    z-index: 2;
+}
+
+.text-name {
+    font-size: 24rpx;
+    line-height: 1.2;
+    display: -webkit-box;
+    padding: 2rpx 0 0 2rpx ;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
