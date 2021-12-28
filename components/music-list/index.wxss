@@ -1,0 +1,50 @@
+/* components/music-list/index.wxss */
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    overflow-y: scroll;
+    margin-top: 30rpx;
+}
+
+.music-idx {
+    color: #999;
+}
+
+.music-detail {
+    height: 100rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.music-idx {
+    width: 80rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.music-info {
+    margin-left: 10rpx;
+    display: flex;
+    height: 100rpx;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.music-singer {
+    font-size: 24rpx;
+    color: #999;
+    display: -webkit-box;
+    padding: 2rpx 0 0 2rpx;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playing {
+    color: #d43c43
+}

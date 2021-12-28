@@ -6,7 +6,8 @@
         "pages/mine/mine",
         "pages/more-movie/more-movie",
         "pages/movie-detail/movie-detail",
-        "pages/music-list/music-list"
+        "pages/music-list/music-list",
+        "pages/player/player"
     ],
     "entryPagePath": "pages/index/index",
     "window": {

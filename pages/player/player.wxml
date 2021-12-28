@@ -1,0 +1,15 @@
+<view class="container" style="background:url({{picUrl}}) center/cover no-repeat;"></view>
+<view class="mask"></view>
+
+<view class="player-info">
+    <view class="player-dist {{isPlaying?'play':''}}">
+        <image class="dist-img rotation" src="{{picUrl}}"></image>
+    </view>
+</view>
+
+<view class="control">
+    <icon class="iconfont icon-back"></icon>
+    <icon class="iconfont {{isPlaying?'icon-pause':'icon-play'}}"></icon>
+    <!-- <icon class="iconfont icon-pause"></icon> -->
+    <icon class="iconfont icon-next"></icon>
+</view>

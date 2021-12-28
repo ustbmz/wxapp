@@ -5,14 +5,46 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        musiclist: Array,
+        listinfo: Object
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.getMusicList(options.id)
+    },
 
+    async getMusicList(id) {
+        await wx.request({
+            url: `https://apis.imooc.com/playlist/detail?id=${id}&icode=DB1E56542295023A`,
+            method: "GET",
+            data: {
+            },
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            success: (res) => {
+                const playlist = res.data.playlist
+                const tracks = res.data.playlist.tracks
+                console.log('getList playlist:', res)
+                this.setData({
+                    musiclist: tracks,
+                    listinfo: {
+                        coverImgUrl: playlist.coverImgUrl,
+                        name: playlist.name,
+                        avatarUrl: playlist.creator.avatarUrl
+                    }
+
+                })
+                this._saveMusicList()
+            }
+        })
+    },
+
+    _saveMusicList(){
+        wx.setStorageSync('musiclist',this.data.musiclist)
     },
 
     /**

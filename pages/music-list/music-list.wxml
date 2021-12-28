@@ -1,2 +1,12 @@
-<!--pages/music-list/music-list.wxml-->
-<text>pages/music-list/music-list.wxml</text>
+<view class="container" >
+    <view class="top-bgimage" style='background: url({{listinfo.coverImgUrl}}) no-repeat top/cover;' >
+       
+    </view>
+    <view class="mask"></view>
+    <view class="avtor">
+        <image class="avtor-img" src="{{listinfo.avatarUrl}}"></image>
+        <text>{{listinfo.name}}</text>
+    </view>
+   
+   <music-list musiclist="{{musiclist}}"></music-list>
+</view>

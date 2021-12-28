@@ -41,6 +41,18 @@
                     "pathName": "pages/movie-detail/movie-detail",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/music-list/music-list",
+                    "query": "id=7189324795",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/player/player",
+                    "query": "id=1842025914&index=0",
+                    "scene": null
                 }
             ]
         }
