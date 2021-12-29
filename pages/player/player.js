@@ -1,5 +1,7 @@
 // pages/player/player.js
-
+const mgr = wx.getBackgroundAudioManager()
+let musiclist = wx.getStorageSync('musiclist')
+let musicIndex = 0
 Page({
 
     /**
@@ -17,10 +19,8 @@ Page({
      */
     onLoad: function (options) {
         console.log(options)
-        let index = options.index
-        let musiclist = wx.getStorageSync('musiclist')
-        let music = musiclist[index]
-
+        musicIndex = options.index
+        let music = musiclist[musicIndex]
         this.setData({
             musicId: options.id,
             picUrl: music.al.picUrl,
@@ -34,6 +34,9 @@ Page({
         wx.showLoading({
             title: '正在加载...',
         })
+        musiclist = wx.getStorageSync('musiclist')
+        console.log(musiclist)
+        mgr.stop()
         await wx.request({
             url: `https://apis.imooc.com/song/url?id=${id}&icode=DB1E56542295023A`,
             method: "GET",
@@ -45,18 +48,21 @@ Page({
             success: (res) => {
                 let url = res.data.data[0].url
                 console.log(url)
+
                 if (url === null) {
                     wx.showToast({
                         title: '无权限播放',
                     })
                     url = 'https://api.ustbmz.com/nmwm.mp3'
                 }
-                const mgr = wx.getBackgroundAudioManager()
                 mgr.src = url
-                mgr.title = this.data.music.name
-                console.log(this.data.music)
-                mgr.coverImgUrl = this.data.music.al.picUrl
+                mgr.title = musiclist[musicIndex].name
+                mgr.coverImgUrl = musiclist[musicIndex].al.picUrl
+                wx.setNavigationBarTitle({
+                    title: musiclist[musicIndex].name,
+                });
                 this.setData({
+                    picUrl: musiclist[musicIndex].al.picUrl,
                     isPlaying: true
                 })
             }
@@ -64,6 +70,32 @@ Page({
         wx.hideLoading({
             success: (res) => { },
         })
+    },
+
+    togglePlay() {
+        if (this.data.isPlaying) {
+            mgr.pause()
+        } else {
+            mgr.play()
+        }
+        this.setData({
+            isPlaying: !this.data.isPlaying
+        })
+    },
+
+    onPrev() {
+        musicIndex--
+        if (musicIndex < 0) {
+            musicIndex = musiclist.length - 1
+        }
+        this._getSongPlayUrl(musiclist[musicIndex].id)
+    },
+    onNext() {
+        musicIndex++
+        if (musicIndex === musiclist.length) {
+            musicIndex = 0
+        }
+        this._getSongPlayUrl(musiclist[musicIndex].id)
     },
 
     /**
