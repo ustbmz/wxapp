@@ -5,11 +5,17 @@
     <view class="player-dist {{isPlaying?'play':''}}">
         <image class="dist-img rotation  {{isPlaying?'':'rotation-pause'}}" src="{{picUrl}}"></image>
     </view>
-</view>
+    <!-- 进度条 -->
+    <view class="progress-bar">
+        <x-progress bind:musicEnd="onNext" />
+    </view>
 
-<view class="control">
-    <icon class="iconfont icon-back" bind:tap="onPrev"></icon>
-    <icon class="iconfont {{isPlaying?'icon-pause':'icon-play'}}" bind:tap="togglePlay"></icon>
-    <!-- <icon class="iconfont icon-pause"></icon> -->
-    <icon class="iconfont icon-next" bind:tap="onNext"></icon>
+    <!-- 控制 -->
+    <view class="control">
+        <icon class="iconfont icon-back" bind:tap="onPrev"></icon>
+        <icon class="iconfont {{isPlaying?'icon-pause':'icon-play'}}" bind:tap="togglePlay"></icon>
+        <!-- <icon class="iconfont icon-pause"></icon> -->
+        <icon class="iconfont icon-next" bind:tap="onNext"></icon>
+    </view>
+
 </view>
