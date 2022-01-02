@@ -51,9 +51,9 @@ Page({
 
                 if (url === null) {
                     wx.showToast({
-                        title: '无权限播放',
+                        title: '歌曲暂无权限播放',
                     })
-                    url = 'https://api.ustbmz.com/nmwm.mp3'
+                    return
                 }
                 mgr.src = url
                 mgr.title = musiclist[musicIndex].name
