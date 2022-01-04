@@ -13,7 +13,7 @@ Component({
      * Component properties
      */
     properties: {
-
+        isSame: Boolean
     },
 
     /**
@@ -30,6 +30,13 @@ Component({
 
     lifetimes: {
         ready() {
+            if (this.properties.isSame && this.data.showTime.totalTime === '00:00') {
+                duration = mgr.duration
+                let durationFmt = this._durationFmt(duration)
+                this.setData({
+                    ['showTime.totalTime']: `${durationFmt.min}:${durationFmt.sec}`
+                })
+            }
             this._getMovableDis()
             this._bindBGMEvent()
         }
@@ -45,7 +52,6 @@ Component({
                 this.data.movableDis = event.detail.x
                 isMoving = true
             }
-            console.log('onTouch' + isMoving)
         },
         onTouchEnd() {
             const currentTime = this._durationFmt(Math.floor(mgr.currentTime))
@@ -71,12 +77,15 @@ Component({
             mgr.onPlay(() => {
                 console.log('onPlay')
                 isMoving = false
+                this.triggerEvent('onMusicPlay')
             })
             mgr.onStop(() => {
                 console.log('onStop')
+
             })
             mgr.onPause(() => {
                 console.log('onPause')
+                this.triggerEvent('onMusicPause')
             })
             mgr.onWaiting(() => {
                 console.log('onWaiting')
@@ -92,7 +101,6 @@ Component({
                 }, 1000)
             })
             mgr.onTimeUpdate(() => {
-                console.log('onTimeUpdate:' + isMoving)
                 if (!isMoving) {
                     const currentTime = mgr.currentTime
                     const currentTimeFmt = this._durationFmt(currentTime)
@@ -105,6 +113,9 @@ Component({
                         })
                         currentSec = secSplit
                     }
+                    this.triggerEvent('timeupdate', {
+                        currentTime
+                    })
                 }
             })
             mgr.onEnded(() => {

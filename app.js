@@ -15,6 +15,13 @@ App({
   },
   globalData: {
     userInfo: null,
-    gIsPlaying:false
+    gIsPlaying: false,
+    musicPlayingId: -1
+  },
+  setMusicPlayingId(id){
+    this.globalData.musicPlayingId = id
+  },
+  getMusicPlayingId(id){
+    return this.globalData.musicPlayingId
   }
 })

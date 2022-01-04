@@ -1,18 +1,28 @@
 // components/music-list/index.js
+const app = getApp()
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
-        musiclist: Array,
-        playerId: -1
+        musiclist: Object
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-
+        musicId: -1
+    },
+    pageLifetimes: {
+        show() {
+            console.log('pageLifetimes')
+            console.log(this.properties.musiclist)
+            this.setData({
+                musicId: parseInt(app.getMusicPlayingId())
+            })
+            console.log('pageLifetimes',this.data.musicId)
+        }
     },
 
     /**
@@ -20,10 +30,10 @@ Component({
      */
     methods: {
         onSelect(event) {
-            console.log('this.properties.musiclist:',this.properties.musiclist)
-            const ds =  event.currentTarget.dataset
+            console.log('onSelect',event.currentTarget.dataset.id)
+            const ds = event.currentTarget.dataset
             this.setData({
-                playerId: ds.id
+                musicId: ds.id
             })
             wx.navigateTo({
                 url: `/pages/player/player?id=${ds.id}&index=${ds.index}`,

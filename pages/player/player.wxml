@@ -2,12 +2,16 @@
 <view class="mask"></view>
 
 <view class="player-info">
-    <view class="player-dist {{isPlaying?'play':''}}">
+    <view class="player-dist {{isPlaying?'play':''}}" hidden="{{isShowLyric}}" bindtap="showLyric">
         <image class="dist-img rotation  {{isPlaying?'':'rotation-pause'}}" src="{{picUrl}}"></image>
     </view>
+    <!-- 歌词组件 -->
+    <x-lyric class="lyric" lyric="{{lyric}}" isShowLyric="{{!isShowLyric}}" bindtap="showLyric" />
     <!-- 进度条 -->
     <view class="progress-bar">
-        <x-progress bind:musicEnd="onNext" />
+        <x-progress bind:musicEnd="onNext" bind:timeupdate="timeupdate" 
+        bind:onMusicPause="onMusicPause" bind:onMusicPlay="onMusicPlay"
+        isSame="{{isSame}}"/>
     </view>
 
     <!-- 控制 -->

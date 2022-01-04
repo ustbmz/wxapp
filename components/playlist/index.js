@@ -14,9 +14,6 @@ Component({
             })
         }
     },
-
-
-
     /**
      * 组件的初始数据
      */
@@ -29,7 +26,6 @@ Component({
      */
     methods: {
         goMusicPlay(event) {
-            console.log(event)
             const id = event.currentTarget.dataset.id
             wx.navigateTo({
                 url: '/pages/music-list/music-list?id=' + id,

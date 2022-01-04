@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "x-progress":"/components/progress-bar/index"
+    "x-progress":"/components/progress-bar/index",
+    "x-lyric":"/components/lyric/index"
   }
 }

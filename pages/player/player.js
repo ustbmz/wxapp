@@ -2,6 +2,7 @@
 const mgr = wx.getBackgroundAudioManager()
 let musiclist = wx.getStorageSync('musiclist')
 let musicIndex = 0
+const app = getApp()
 Page({
 
     /**
@@ -10,33 +11,59 @@ Page({
     data: {
         music: Object,
         picUrl: '',
-        musicId: '',
-        isPlaying: false
+        isPlaying: false,
+        lyric: '',
+        isShowLyric: false,
+        isSame: false // 是否为同一首歌
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options)
         musicIndex = options.index
         let music = musiclist[musicIndex]
         this.setData({
-            musicId: options.id,
             picUrl: music.al.picUrl,
             music: music,
             isPlaying: true
         })
         this._getSongPlayUrl(options.id)
+
+    },
+    onMusicPause() {
+        this.setData({
+            isPlaying: false
+        })
+    },
+    onMusicPlay() {
+        this.setData({
+            isPlaying: true
+        })
+    },
+
+    timeupdate(event) {
+        this.selectComponent('.lyric').update(event.detail.currentTime)
     },
 
     async _getSongPlayUrl(id) {
         wx.showLoading({
             title: '正在加载...',
         })
+        console.log('_getSongPlayUrl', id)
         musiclist = wx.getStorageSync('musiclist')
-        console.log(musiclist)
-        mgr.stop()
+        if (id === app.getMusicPlayingId()) {
+            this.setData({
+                isSame: true
+            })
+        } else {
+            this.setData({
+                isSame: false
+            })
+        }
+        if (!this.data.isSame) {
+            mgr.stop()
+        }
         await wx.request({
             url: `https://apis.imooc.com/song/url?id=${id}&icode=DB1E56542295023A`,
             method: "GET",
@@ -47,28 +74,61 @@ Page({
             },
             success: (res) => {
                 let url = res.data.data[0].url
-                console.log(url)
-
                 if (url === null) {
                     wx.showToast({
                         title: '歌曲暂无权限播放',
                     })
                     return
                 }
-                mgr.src = url
-                mgr.title = musiclist[musicIndex].name
-                mgr.coverImgUrl = musiclist[musicIndex].al.picUrl
-                wx.setNavigationBarTitle({
-                    title: musiclist[musicIndex].name,
-                });
+                if (!this.data.isSame) {
+                    mgr.src = url
+                    mgr.title = musiclist[musicIndex].name
+                    mgr.coverImgUrl = musiclist[musicIndex].al.picUrl
+                    mgr.singer = musiclist[musicIndex].ar[0].name
+                    mgr.epname = musiclist[musicIndex].al.name
+                    wx.setNavigationBarTitle({
+                        title: musiclist[musicIndex].name,
+                    });
+                }
                 this.setData({
                     picUrl: musiclist[musicIndex].al.picUrl,
                     isPlaying: true
                 })
+                app.setMusicPlayingId(id)
+                this._getLyric(id)
             }
         })
         wx.hideLoading({
             success: (res) => { },
+        })
+    },
+
+    async _getLyric(id) {
+        await wx.request({
+            url: `https://apis.imooc.com/lyric?id=${id}&icode=DB1E56542295023A`,
+            method: "GET",
+            data: {
+            },
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            success: (res) => {
+                let lyric = '暂无歌词'
+                const lrc = res.data.lrc.lyric
+                if (lrc) {
+                    lyric = lrc
+                }
+                this.setData({
+                    lyric: lyric
+                })
+            }
+        })
+
+    },
+
+    showLyric() {
+        this.setData({
+            isShowLyric: !this.data.isShowLyric
         })
     },
 
