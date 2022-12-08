@@ -23,6 +23,7 @@ Page({
     onLoad: function (options) {
         musicIndex = options.index
         let music = musiclist[musicIndex]
+        console.log('musiclist:'+musiclist)
         this.setData({
             picUrl: music.al.picUrl,
             music: music,
@@ -65,7 +66,7 @@ Page({
             mgr.stop()
         }
         await wx.request({
-            url: `https://apis.imooc.com/song/url?id=${id}&icode=DB1E56542295023A`,
+            url: `https://apis.imooc.com/song/url?id=${id}&icode=EA5E602F97A11741`,
             method: "GET",
             data: {
             },
@@ -105,7 +106,7 @@ Page({
 
     async _getLyric(id) {
         await wx.request({
-            url: `https://apis.imooc.com/lyric?id=${id}&icode=DB1E56542295023A`,
+            url: `https://apis.imooc.com/lyric?id=${id}&icode=EA5E602F97A11741`,
             method: "GET",
             data: {
             },

@@ -1,60 +1,55 @@
 {
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/posts/posts",
+          "pathName": "pages/posts/posts",
+          "query": "name=posts",
+          "scene": 1000
         },
-        "game": {
-            "list": []
+        {
+          "name": "pages/post-detail/post-detail",
+          "pathName": "pages/post-detail/post-detail",
+          "query": "pid=61a605b0f38570d78763001c",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "pages/posts/posts",
-                    "pathName": "pages/posts/posts",
-                    "query": "name=posts",
-                    "scene": 1000
-                },
-                {
-                    "name": "pages/post-detail/post-detail",
-                    "pathName": "pages/post-detail/post-detail",
-                    "query": "pid=61a605b0f38570d78763001c",
-                    "scene": null
-                },
-                {
-                    "name": "pages/mine/mine",
-                    "pathName": "pages/mine/mine",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/more-movie/more-movie",
-                    "pathName": "pages/more-movie/more-movie",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/movie-detail/movie-detail",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/music-list/music-list",
-                    "query": "id=7189324795",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/player/player",
-                    "query": "id=1842025914&index=0",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "pages/more-movie/more-movie",
+          "pathName": "pages/more-movie/more-movie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/movie-detail/movie-detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/music-list/music-list",
+          "query": "id=7189324795",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/player/player",
+          "query": "id=1842025914&index=0",
+          "scene": null
         }
+      ]
     }
+  },
+  "projectname": "wxapp",
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
 }

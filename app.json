@@ -40,12 +40,6 @@
                 "iconPath": "images/tabbar/movie.png",
                 "text": "movie",
                 "selectedIconPath": "images/tabbar/movieSel.png"
-            },
-            {
-                "pagePath": "pages/mine/mine",
-                "iconPath": "images/tabbar/mine.png",
-                "text": "mine",
-                "selectedIconPath": "images/tabbar/mineSel.png"
             }
         ]
     },

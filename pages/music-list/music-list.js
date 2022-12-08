@@ -16,9 +16,10 @@ Page({
         this.getMusicList(options.id)
     },
 
-    async getMusicList(id) {
+    async getMusicList (id) {
+        console.log('getMusicList',id)
         await wx.request({
-            url: `https://apis.imooc.com/playlist/detail?id=${id}&icode=DB1E56542295023A`,
+            url: `https://apis.imooc.com/playlist/detail?id=${id}&icode=EA5E602F97A11741`,
             method: "GET",
             data: {
             },
@@ -27,8 +28,9 @@ Page({
             },
             success: (res) => {
                 const playlist = res.data.playlist
+                console.log('getList playlist:', playlist)
                 const tracks = res.data.playlist.tracks
-                console.log('getList playlist:', res)
+                console.log('getList playlist tracks:', tracks)
                 this.setData({
                     musiclist: tracks,
                     listinfo: {
@@ -43,8 +45,8 @@ Page({
         })
     },
 
-    _saveMusicList(){
-        wx.setStorageSync('musiclist',this.data.musiclist)
+    _saveMusicList () {
+        wx.setStorageSync('musiclist', this.data.musiclist)
     },
 
     /**
