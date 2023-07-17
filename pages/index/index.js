@@ -1,93 +1,79 @@
 // pages/index/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    imgList: [{
-      url: 'http://p1.music.126.net/oeH9rlBAj3UNkhOmfog8Hw==/109951164169407335.jpg',
-    },
-    {
-      url: 'http://p1.music.126.net/xhWAaHI-SIYP8ZMzL9NOqg==/109951164167032995.jpg',
-    },
-    {
-      url: 'http://p1.music.126.net/Yo-FjrJTQ9clkDkuUCTtUg==/109951164169441928.jpg',
-    }],
-    playlist: []
+    imgList: [
+      {
+        url: 'http://p1.music.126.net/oeH9rlBAj3UNkhOmfog8Hw==/109951164169407335.jpg',
+      },
+      {
+        url: 'http://p1.music.126.net/xhWAaHI-SIYP8ZMzL9NOqg==/109951164167032995.jpg',
+      },
+      {
+        url: 'http://p1.music.126.net/Yo-FjrJTQ9clkDkuUCTtUg==/109951164169441928.jpg',
+      },
+    ],
+    playlist: [],
   },
 
   async getList(option) {
-    if (option === 'index') option = ''
+    if (option === 'index') option = '';
     await wx.request({
-      url: "https://apis.imooc.com/personalized?icode=EA5E602F97A11741",
-      method: "GET",
-      data: {
-      },
+      url: 'https://apis.imooc.com/personalized?icode=486AB0D4FCB2FFFC',
+      method: 'GET',
+      data: {},
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json', // 默认值
       },
       success: (res) => {
-        const data = res.data.result
-        console.log('getList playlist:',data)
+        const data = res.data.result;
+        console.log('getList playlist:', data);
         this.setData({
-          playlist: data
-        })
-      }
-    })
+          playlist: data,
+        });
+      },
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
-    this.getList()
+  onLoad(options) {
+    this.getList();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
+  onPullDownRefresh: function () {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
-})
+  onShareAppMessage: function () {},
+});
