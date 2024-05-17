@@ -21,7 +21,7 @@ Page({
   async getList(option) {
     if (option === 'index') option = '';
     await wx.request({
-      url: 'https://apis.imooc.com/personalized?icode=486AB0D4FCB2FFFC',
+      url: 'https://apis.imooc.com/personalized?icode=24A98502C687C4C3',
       method: 'GET',
       data: {},
       header: {

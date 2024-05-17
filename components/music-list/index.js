@@ -5,7 +5,7 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        musiclist: Object
+      musiclist: Object
     },
 
     /**
@@ -16,8 +16,7 @@ Component({
     },
     pageLifetimes: {
         show() {
-            console.log('pageLifetimes')
-            console.log(this.properties.musiclist)
+            console.log('show:',this.properties.musiclist)
             this.setData({
                 musicId: parseInt(app.getMusicPlayingId())
             })

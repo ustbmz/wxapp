@@ -5,8 +5,7 @@
     <view class="mask"></view>
     <view class="avtor">
         <image class="avtor-img" src="{{listinfo.avatarUrl}}"></image>
-        <text>{{listinfo.name}}</text>
+        <!-- <text>{{listinfo.name}}</text> -->
     </view>
-   
    <music-list musiclist="{{musiclist}}"></music-list>
 </view>
