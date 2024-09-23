@@ -18,7 +18,7 @@ Page({
   async getMusicList(id) {
     console.log('getMusicList', id);
     await wx.request({
-      url: `https://apis.imooc.com/playlist/detail?id=${id}&icode=24A98502C687C4C3`,
+      url: `https://apis.imooc.com/playlist/detail?id=${id}&icode=78187654EC8B41F7`,
       method: 'GET',
       data: {},
       header: {

@@ -65,7 +65,7 @@ Page({
       mgr.stop();
     }
     await wx.request({
-      url: `https://apis.imooc.com/song/url?id=${id}&icode=24A98502C687C4C3`,
+      url: `https://apis.imooc.com/song/url?id=${id}&icode=78187654EC8B41F7`,
       method: 'GET',
       data: {},
       header: {
@@ -104,7 +104,7 @@ Page({
 
   async _getLyric(id) {
     await wx.request({
-      url: `https://apis.imooc.com/lyric?id=${id}&icode=24A98502C687C4C3`,
+      url: `https://apis.imooc.com/lyric?id=${id}&icode=78187654EC8B41F7`,
       method: 'GET',
       data: {},
       header: {
